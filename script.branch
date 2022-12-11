@@ -1,0 +1,16 @@
+branch root root
+
+trunk oak hello_world! root
+trunk birch continue[y/n] root
+
+branch continued y root
+trunk oak good_job! continued
+end continued
+
+branch didnt n root
+trunk oak I_dont_like_you! didnt
+end didnt
+
+trunk spruce + root
+
+end root
