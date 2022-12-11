@@ -33,6 +33,8 @@ namespace branchcompiler
                 case "null":
                     l = input;
                     break;
+                case "flush":
+                    break;
             }
             return l;
         }
@@ -44,7 +46,6 @@ namespace branchcompiler
             List<string> currents = new List<string>();
             currents.Add("root");
             string current = "root";
-            Console.Write("File destination: ");
             string[] lines = File.ReadAllLines(args[0]);
             List<string> output = new List<string>();
             string outputmain = "";
@@ -81,7 +82,7 @@ namespace branchcompiler
                         {
                             output.Add(new trunk(line[1], line[2]).run());
                         }
-                        else
+                        else if (line[2] == "!input!")
                         {
                             string x = (new trunk(line[1], compile(output)).run());
                             output = new List<string>();
